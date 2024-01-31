@@ -62,22 +62,17 @@ Splitting it up in `Micro` and `Macro`
 
 ### Getting the data in the right shape
 
-```{r}
-abundance_data <- 
-  warande %>% 
-    dplyr::group_by(MicroMacro) %>% 
-    dplyr::count(species_name) %>% 
-    dplyr::group_split() %>% 
-    purrr::map(~dplyr::pull(.x, n)) %>% 
-    purrr::set_names(c("Macro", "Micro"))
+```{r demo convert_to_abundance, include=FALSE}
+convert_to_abundance(warande)
 ```
 Plug this into iNEXT:
 
 ```{r calculate rarefaction by abundance}
 rare_out_abun <- 
-  iNEXT::iNEXT(abundance_data,
+  iNEXT::iNEXT(convert_to_abundance(warande),
              datatype = "abundance",
-             nboot = 500)
+             nboot = 50 # you might want to set this a bit higher
+             )
 rare_out_abun
 
 ```
