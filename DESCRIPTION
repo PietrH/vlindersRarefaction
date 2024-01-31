@@ -19,6 +19,7 @@ VignetteBuilder: knitr
 Imports: 
     assertthat,
     dplyr,
+    glue,
     iNEXT,
     magrittr,
     purrr,
