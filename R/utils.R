@@ -1,6 +1,6 @@
 #' Helper to check if input is exactly as expected csv
 #'
-#' @param input_dataframe
+#' @param input_dataframe csv with exactly the same columns as `tblWarandepark.csv`
 #'
 #' @return TRUE if all is well
 #'

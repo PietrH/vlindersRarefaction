@@ -41,10 +41,7 @@ The package was written with exactly this file in mind as a draft, with little
 flexibility. This means that if your file doesn't look like this:
 
 ```{r echo=FALSE}
-warande <-
-  readr::read_delim("tblWarandepark.csv",
-                    delim = ";",
-                    show_col_types = FALSE)
+data(warande)
 dplyr::glimpse(warande)
 ```
 
@@ -56,7 +53,6 @@ This is a basic example on how you can plug this package into iNEXT:
 
 ```{r example, echo=TRUE}
 library(vlindersRarefaction)
-## load some input data
 
 ## convert to formats iNEXT is expecting, then calculate rarefaction curves
 rare_out_inc <-

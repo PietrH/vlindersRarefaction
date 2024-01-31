@@ -11,7 +11,9 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
 Suggests: 
     ggplot2,
+    iNEXT,
     knitr,
+    readr,
     rmarkdown,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
@@ -19,7 +21,9 @@ VignetteBuilder: knitr
 Imports: 
     assertthat,
     dplyr,
-    iNEXT,
+    glue,
     magrittr,
-    purrr,
-    readr
+    purrr
+Depends: 
+    R (>= 2.10)
+LazyData: true

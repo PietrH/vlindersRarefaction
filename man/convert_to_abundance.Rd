@@ -7,7 +7,7 @@
 convert_to_abundance(input_dataframe)
 }
 \arguments{
-\item{input_dataframe}{}
+\item{input_dataframe}{dataframe with exactly the same columns as \code{tblWarandepark.csv}}
 }
 \value{
 a list in the format as is expected by iNEXT when datatype is set to abundance

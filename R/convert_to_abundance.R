@@ -5,7 +5,7 @@
 #' of species in that treatment, and the sum of every child equal to the total
 #' number of observed individuals.
 #'
-#' @param input_dataframe
+#' @param input_dataframe dataframe with exactly the same columns as `tblWarandepark.csv`
 #'
 #' @return a list in the format as is expected by iNEXT when datatype is set to abundance
 #' @export

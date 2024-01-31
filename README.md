@@ -49,7 +49,6 @@ This is a basic example on how you can plug this package into iNEXT:
 
 ``` r
 library(vlindersRarefaction)
-## load some input data
 
 ## convert to formats iNEXT is expecting, then calculate rarefaction curves
 rare_out_inc <-

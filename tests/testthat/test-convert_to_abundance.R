@@ -1,7 +1,4 @@
-warande <-
-  readr::read_delim("../../tblWarandepark.csv",
-                    delim = ";",
-                    show_col_types = FALSE)
+data(warande)
 
 test_that("convert_to_abundance() returns right amount of species", {
   number_of_macro_species <-

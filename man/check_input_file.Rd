@@ -7,7 +7,7 @@
 check_input_file(input_dataframe)
 }
 \arguments{
-\item{input_dataframe}{}
+\item{input_dataframe}{csv with exactly the same columns as \code{tblWarandepark.csv}}
 }
 \value{
 TRUE if all is well
