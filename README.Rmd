@@ -32,24 +32,45 @@ You can install the development version of vlindersRarefaction from [GitHub](htt
 devtools::install_github("PietrH/vlindersRarefaction")
 ```
 
-## Example
+## Scope
 
-This is a basic example which shows you how to solve a common problem:
+This simple and experimental package converts a dataframe with a known format to 
+the format the iNEXT package expects for abundance and incidence frequency data. 
 
-```{r example, eval=FALSE, include=FALSE}
+The package was written with exactly this file in mind as a draft, with little 
+flexibility. This means that if your file doesn't look like this:
+
+```{r echo=FALSE}
+warande <-
+  readr::read_delim("tblWarandepark.csv",
+                    delim = ";",
+                    show_col_types = FALSE)
+dplyr::glimpse(warande)
+```
+
+This package will not work for you. Please create an issue if you would like to 
+use it on data of a different shape (although at that point I'll probably just 
+rewrite it to accept DarwinCore occurrence inputs).
+
+This is a basic example on how you can plug this package into iNEXT:
+
+```{r example, echo=TRUE}
 library(vlindersRarefaction)
 ## load some input data
-warande <- readr::read_delim("../tblWarandepark.csv", delim = ";")
-## convert to formats iNEXT is expecting
-convert_to_incidence_freq(warande)
-convert_to_abundance(warande)
+
+## convert to formats iNEXT is expecting, then calculate rarefaction curves
+rare_out_inc <-
+  iNEXT::iNEXT(convert_to_incidence_freq(warande),
+               datatype = "incidence_freq",
+               nboot = 2 # for speed
+               )
+rare_out_abun <-
+  iNEXT::iNEXT(convert_to_abundance(warande),
+               datatype = "abundance",
+               nboot = 2 # for speed
+               )
+## and plot them:
+iNEXT::ggiNEXT(rare_out_abun) + ggplot2::ggtitle("Abundance based")
+iNEXT::ggiNEXT(rare_out_inc) + ggplot2::ggtitle("Incidence based")
+
 ```
-
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
-
-```{r cars}
-summary(cars)
-```
-
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this.
-

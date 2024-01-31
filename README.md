@@ -23,23 +23,52 @@ You can install the development version of vlindersRarefaction from
 devtools::install_github("PietrH/vlindersRarefaction")
 ```
 
-## Example
+## Scope
 
-This is a basic example which shows you how to solve a common problem:
+This simple and experimental package converts a dataframe with a known
+format to the format the iNEXT package expects for abundance and
+incidence frequency data.
 
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
+The package was written with exactly this file in mind as a draft, with
+little flexibility. This means that if your file doesn’t look like this:
+
+    #> Rows: 2,976
+    #> Columns: 5
+    #> $ date         <date> 2009-06-19, 2009-07-01, 2009-08-13, 2009-08-30, 2010-06-…
+    #> $ species_name <chr> "Bruine huismot", "Oranje iepentakvlinder", "Oranje worte…
+    #> $ year         <dbl> 2009, 2009, 2009, 2009, 2010, 2010, 2010, 2010, 2010, 201…
+    #> $ number       <dbl> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, …
+    #> $ MicroMacro   <chr> "Micro", "Macro", "Macro", "Macro", "Macro", "Macro", "Ma…
+
+This package will not work for you. Please create an issue if you would
+like to use it on data of a different shape (although at that point I’ll
+probably just rewrite it to accept DarwinCore occurrence inputs).
+
+This is a basic example on how you can plug this package into iNEXT:
 
 ``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
+library(vlindersRarefaction)
+## load some input data
+
+## convert to formats iNEXT is expecting, then calculate rarefaction curves
+rare_out_inc <-
+  iNEXT::iNEXT(convert_to_incidence_freq(warande),
+               datatype = "incidence_freq",
+               nboot = 2 # for speed
+               )
+rare_out_abun <-
+  iNEXT::iNEXT(convert_to_abundance(warande),
+               datatype = "abundance",
+               nboot = 2 # for speed
+               )
+## and plot them:
+iNEXT::ggiNEXT(rare_out_abun) + ggplot2::ggtitle("Abundance based")
 ```
 
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this.
+<img src="man/figures/README-example-1.png" width="100%" />
+
+``` r
+iNEXT::ggiNEXT(rare_out_inc) + ggplot2::ggtitle("Incidence based")
+```
+
+<img src="man/figures/README-example-2.png" width="100%" />
