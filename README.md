@@ -26,7 +26,8 @@ devtools::install_github("PietrH/vlindersRarefaction")
 ## Scope
 
 This simple and experimental package converts a dataframe with a known
-format to the format the iNEXT package expects for abundance and
+format to the format the [iNEXT
+package](https://github.com/AnneChao/iNEXT) expects for abundance and
 incidence frequency data.
 
 The package was written with exactly this file in mind as a draft, with
