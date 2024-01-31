@@ -16,6 +16,8 @@ Suggests:
 Config/testthat/edition: 3
 VignetteBuilder: knitr
 Imports: 
+    assertthat,
     dplyr,
     iNEXT,
-    magrittr
+    magrittr,
+    purrr
