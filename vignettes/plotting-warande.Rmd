@@ -73,7 +73,7 @@ abundance_data <-
 ```
 Plug this into iNEXT:
 
-```{r}
+```{r calculate rarefaction by abundance}
 rare_out_abun <- 
   iNEXT::iNEXT(abundance_data,
              datatype = "abundance",
@@ -83,7 +83,7 @@ rare_out_abun
 ```
 And plot it:
 
-```{r}
+```{r plot abundance based curve}
 iNEXT::ggiNEXT(rare_out_abun)
 ```
 
