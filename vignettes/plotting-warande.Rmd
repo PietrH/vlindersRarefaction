@@ -29,39 +29,30 @@ Splitting it up in `Micro` and `Macro`
 
 iNEXT expects incidence data to consist of a list of frequencies, with the first element of the list the number of sampling units, followed by the incidence frequencies. The length of the list should be the number of observed species minus one. 
 
-```{r}
-incidence_frequencies <- 
-  warande %>% 
-    dplyr::group_by(MicroMacro) %>% 
-    dplyr::count(species_name) %>% 
-    dplyr::group_map(~dplyr::pull(.x, n)) %>% 
-    purrr::set_names(c("Macro", "Micro"))
+This package provides a function to convert a dataframe with a known shape (and
+exactly this shape) to this format. 
 
-number_of_sampling_units <- 
-  warande %>% 
-    dplyr::group_by(MicroMacro) %>%
-    dplyr::group_map(~dplyr::n_distinct(dplyr::pull(.x,date))) %>% 
-    purrr::set_names(c("Macro", "Micro"))
-
+```{r demo convert_to_incidence_freq, include=FALSE}
+convert_to_incidence_freq(warande)
   
 ```
 
-Plug this into iNEXT:
 
-```{r}
+
+```{r calculate rarefaction by incidence}
 rare_out_inc <- 
   iNEXT::iNEXT(
-    list(Macro = c(number_of_sampling_units$Macro, incidence_frequencies$Macro),
-         Micro = c(number_of_sampling_units$Micro, incidence_frequencies$Micro)),
+    convert_to_incidence_freq(warande),
     datatype = "incidence_freq",
-    nboot = 500)
+    nboot = 50 # you might want to set this a bit higher
+    )
 
 rare_out_inc
 ```
 
 And plot it:
 
-```{r}
+```{r plot incidence based curve}
 iNEXT::ggiNEXT(rare_out_inc)
 ```
 
