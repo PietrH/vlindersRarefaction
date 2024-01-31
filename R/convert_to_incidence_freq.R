@@ -6,7 +6,7 @@
 #' per species equal to the number of sampling units this species was observed
 #' in.
 #'
-#' @param input_dataframe
+#' @param input_dataframe dataframe with exactly the same columns as `tblWarandepark.csv`
 #'
 #' @return a list in the format as is expected by iNEXT when datatype is set to incidence_freq
 #' @export
