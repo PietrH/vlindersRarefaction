@@ -31,24 +31,68 @@ iNEXT expects incidence data to consist of a list of frequencies, with the first
 
 ```{r}
 incidence_frequencies <- 
-  dplyr::filter(warande, MicroMacro == "Macro") %>% 
-  dplyr::group_by(species_name) %>% 
-  dplyr::tally() %>% 
-  dplyr::pull(n)
+  warande %>% 
+    dplyr::group_by(MicroMacro) %>% 
+    dplyr::count(species_name) %>% 
+    dplyr::group_map(~dplyr::pull(.x, n)) %>% 
+    purrr::set_names(c("Macro", "Micro"))
 
 number_of_sampling_units <- 
-  dplyr::filter(warande, MicroMacro == "Macro") %>% 
-  dplyr::pull(date) %>% 
-  unique() %>% 
-  length()
+  warande %>% 
+    dplyr::group_by(MicroMacro) %>%
+    dplyr::group_map(~dplyr::n_distinct(dplyr::pull(.x,date))) %>% 
+    purrr::set_names(c("Macro", "Micro"))
 
-macro_incidence <- list(Macro = c(number_of_sampling_units, incidence_frequencies))
+  
 ```
 
 Plug this into iNEXT:
 
 ```{r}
-rare_out <- iNEXT::iNEXT(macro_incidence, datatype = "incidence_freq")
-iNEXT::ggiNEXT(rare_out)
+rare_out_inc <- 
+  iNEXT::iNEXT(
+    list(Macro = c(number_of_sampling_units$Macro, incidence_frequencies$Macro),
+         Micro = c(number_of_sampling_units$Micro, incidence_frequencies$Micro)),
+    datatype = "incidence_freq",
+    nboot = 500)
+
+rare_out_inc
+```
+
+And plot it:
+
+```{r}
+iNEXT::ggiNEXT(rare_out_inc)
+```
+
+## Abundance based
+
+Splitting it up in `Micro` and `Macro`
+
+### Getting the data in the right shape
+
+```{r}
+abundance_data <- 
+  warande %>% 
+    dplyr::group_by(MicroMacro) %>% 
+    dplyr::count(species_name) %>% 
+    dplyr::group_split() %>% 
+    purrr::map(~dplyr::pull(.x, n)) %>% 
+    purrr::set_names(c("Macro", "Micro"))
+```
+Plug this into iNEXT:
+
+```{r}
+rare_out_abun <- 
+  iNEXT::iNEXT(abundance_data,
+             datatype = "abundance",
+             nboot = 500)
+rare_out_abun
+
+```
+And plot it:
+
+```{r}
+iNEXT::ggiNEXT(rare_out_abun)
 ```
 
