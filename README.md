@@ -11,8 +11,6 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 [![test-coverage](https://github.com/PietrH/vlindersRarefaction/actions/workflows/test-coverage.yaml/badge.svg)](https://github.com/PietrH/vlindersRarefaction/actions/workflows/test-coverage.yaml)
 <!-- badges: end -->
 
-The goal of vlindersRarefaction is to …
-
 ## Installation
 
 You can install the development version of vlindersRarefaction from
