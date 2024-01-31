@@ -1,0 +1,54 @@
+---
+title: "plotting-warande"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{plotting-warande}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(vlindersRarefaction)
+```
+
+```{r read input data}
+warande <- readr::read_delim("../tblWarandepark.csv", delim = ";")
+```
+## Incidence based rarefaction curve
+
+Splitting it up in `Micro` and `Macro`
+
+### Getting the data in the right shape
+
+iNEXT expects incidence data to consist of a list of frequencies, with the first element of the list the number of sampling units, followed by the incidence frequencies. The length of the list should be the number of observed species minus one. 
+
+```{r}
+incidence_frequencies <- 
+  dplyr::filter(warande, MicroMacro == "Macro") %>% 
+  dplyr::group_by(species_name) %>% 
+  dplyr::tally() %>% 
+  dplyr::pull(n)
+
+number_of_sampling_units <- 
+  dplyr::filter(warande, MicroMacro == "Macro") %>% 
+  dplyr::pull(date) %>% 
+  unique() %>% 
+  length()
+
+macro_incidence <- list(Macro = c(number_of_sampling_units, incidence_frequencies))
+```
+
+Plug this into iNEXT:
+
+```{r}
+rare_out <- iNEXT::iNEXT(macro_incidence, datatype = "incidence_freq")
+iNEXT::ggiNEXT(rare_out)
+```
+
