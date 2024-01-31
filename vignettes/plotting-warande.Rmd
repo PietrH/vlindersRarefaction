@@ -19,7 +19,8 @@ library(vlindersRarefaction)
 ```
 
 ```{r read input data}
-warande <- readr::read_delim("../tblWarandepark.csv", delim = ";")
+data(warande) # example data included in package
+dplyr::glimpse(warande)
 ```
 ## Incidence based rarefaction curve
 

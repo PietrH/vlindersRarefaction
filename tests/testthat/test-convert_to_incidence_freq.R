@@ -1,7 +1,4 @@
-warande <-
-  readr::read_delim("../../tblWarandepark.csv",
-                    delim = ";",
-                    show_col_types = FALSE)
+data(warande)
 
 test_that("convert_to_incidence_freq() returns number of sampling units in first element", {
   n_macro_sampling_units <-
