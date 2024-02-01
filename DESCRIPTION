@@ -1,5 +1,6 @@
 Package: vlindersRarefaction
-Title: Use iNEXT to create Rarefaction curves for citizen science Butterfly data
+Title: Use iNEXT to create Rarefaction curves for citizen science
+    Butterfly data
 Version: 0.1.0
 Authors@R: c(
     person("Pieter", "Huybrechts", , "pieter.huybrechts@inbo.be", role = c("aut", "cre"),
@@ -9,9 +10,15 @@ Authors@R: c(
   )
 Description: What the package does (one paragraph).
 License: MIT + file LICENSE
-Encoding: UTF-8
-Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.3
+URL: https://pietrh.github.io/vlindersRarefaction/, https://github.com/PietrH/vlindersRarefaction
+Depends: 
+    R (>= 2.10)
+Imports: 
+    assertthat,
+    dplyr,
+    glue,
+    magrittr,
+    purrr
 Suggests: 
     ggplot2,
     iNEXT,
@@ -19,15 +26,11 @@ Suggests:
     readr,
     rmarkdown,
     testthat (>= 3.0.0)
+VignetteBuilder: 
+    knitr
 Config/testthat/edition: 3
-VignetteBuilder: knitr
-Imports: 
-    assertthat,
-    dplyr,
-    glue,
-    magrittr,
-    purrr
-Depends: 
-    R (>= 2.10)
+Encoding: UTF-8
 LazyData: true
-URL: https://pietrh.github.io/vlindersRarefaction/
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+BugReports: https://github.com/PietrH/vlindersRarefaction/issues
