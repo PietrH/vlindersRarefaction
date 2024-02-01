@@ -49,7 +49,14 @@
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off">
 </form>
 
-      <ul class="navbar-nav"></ul>
+      <ul class="navbar-nav">
+<li class="nav-item">
+  <a class="external-link nav-link" href="https://github.com/PietrH/vlindersRarefaction/" aria-label="github">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
 </div>
 
     
@@ -64,7 +71,7 @@
       <img src="" class="logo" alt=""><h1>Creating some rarefaction curves for butteryfly data</h1>
             
       
-      
+      <small class="dont-index">Source: <a href="https://github.com/PietrH/vlindersRarefaction/blob/HEAD/vignettes/plotting-warande.Rmd" class="external-link"><code>vignettes/plotting-warande.Rmd</code></a></small>
       <div class="d-none name"><code>plotting-warande.Rmd</code></div>
     </div>
 
@@ -115,66 +122,66 @@ shape (and exactly this shape) to this format.</p>
 <span><span class="co">#&gt; $iNextEst: diversity estimates with rarefied and extrapolated samples.</span></span>
 <span><span class="co">#&gt; $size_based (LCL and UCL are obtained for fixed size.)</span></span>
 <span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt;    Assemblage   t        Method Order.q         qD    qD.LCL     qD.UCL</span></span>
-<span><span class="co">#&gt; 1       Macro   1   Rarefaction       0  13.765432  13.24644  14.284423</span></span>
-<span><span class="co">#&gt; 10      Macro  81   Rarefaction       0 259.802910 251.82151 267.784306</span></span>
-<span><span class="co">#&gt; 20      Macro 162      Observed       0 312.000000 300.68211 323.317889</span></span>
-<span><span class="co">#&gt; 30      Macro 239 Extrapolation       0 337.999160 321.52349 354.474833</span></span>
-<span><span class="co">#&gt; 40      Macro 324 Extrapolation       0 353.816856 331.52686 376.106849</span></span>
-<span><span class="co">#&gt; 41      Micro   1   Rarefaction       0   5.006711   4.68750   5.325923</span></span>
-<span><span class="co">#&gt; 50      Micro  74   Rarefaction       0 147.884654 138.68435 157.084953</span></span>
-<span><span class="co">#&gt; 60      Micro 149      Observed       0 203.000000 189.69509 216.304912</span></span>
-<span><span class="co">#&gt; 70      Micro 220 Extrapolation       0 234.001881 216.43084 251.572926</span></span>
-<span><span class="co">#&gt; 80      Micro 298 Extrapolation       0 255.307935 232.10315 278.512720</span></span>
+<span><span class="co">#&gt;    Assemblage   t        Method Order.q         qD     qD.LCL     qD.UCL</span></span>
+<span><span class="co">#&gt; 1       Macro   1   Rarefaction       0  13.765432  13.360112  14.170752</span></span>
+<span><span class="co">#&gt; 10      Macro  81   Rarefaction       0 259.802910 253.738034 265.867786</span></span>
+<span><span class="co">#&gt; 20      Macro 162      Observed       0 312.000000 302.881878 321.118122</span></span>
+<span><span class="co">#&gt; 30      Macro 239 Extrapolation       0 337.999160 324.229447 351.768874</span></span>
+<span><span class="co">#&gt; 40      Macro 324 Extrapolation       0 353.816856 334.621298 373.012415</span></span>
+<span><span class="co">#&gt; 41      Micro   1   Rarefaction       0   5.006711   4.669676   5.343747</span></span>
+<span><span class="co">#&gt; 50      Micro  74   Rarefaction       0 147.884654 139.905423 155.863884</span></span>
+<span><span class="co">#&gt; 60      Micro 149      Observed       0 203.000000 191.422898 214.577102</span></span>
+<span><span class="co">#&gt; 70      Micro 220 Extrapolation       0 234.001881 218.687454 249.316308</span></span>
+<span><span class="co">#&gt; 80      Micro 298 Extrapolation       0 255.307935 234.439519 276.176352</span></span>
 <span><span class="co">#&gt;            SC     SC.LCL     SC.UCL</span></span>
-<span><span class="co">#&gt; 1  0.09081692 0.08456661 0.09706724</span></span>
-<span><span class="co">#&gt; 10 0.93026235 0.92454500 0.93597969</span></span>
-<span><span class="co">#&gt; 20 0.96795077 0.96155019 0.97435136</span></span>
-<span><span class="co">#&gt; 30 0.98185989 0.97528706 0.98843271</span></span>
-<span><span class="co">#&gt; 40 0.99032209 0.98519674 0.99544744</span></span>
-<span><span class="co">#&gt; 41 0.05474241 0.04628720 0.06319762</span></span>
-<span><span class="co">#&gt; 50 0.79818804 0.77915506 0.81722102</span></span>
-<span><span class="co">#&gt; 60 0.89210493 0.87131590 0.91289396</span></span>
-<span><span class="co">#&gt; 70 0.93111330 0.90883767 0.95338892</span></span>
-<span><span class="co">#&gt; 80 0.95792181 0.93813151 0.97771211</span></span>
+<span><span class="co">#&gt; 1  0.09081692 0.08537723 0.09625662</span></span>
+<span><span class="co">#&gt; 10 0.93026235 0.92492730 0.93559739</span></span>
+<span><span class="co">#&gt; 20 0.96795077 0.96185094 0.97405061</span></span>
+<span><span class="co">#&gt; 30 0.98185989 0.97559296 0.98812682</span></span>
+<span><span class="co">#&gt; 40 0.99032209 0.98539258 0.99525160</span></span>
+<span><span class="co">#&gt; 41 0.05474241 0.04649653 0.06298829</span></span>
+<span><span class="co">#&gt; 50 0.79818804 0.77701614 0.81935994</span></span>
+<span><span class="co">#&gt; 60 0.89210493 0.87234064 0.91186922</span></span>
+<span><span class="co">#&gt; 70 0.93111330 0.90910005 0.95312655</span></span>
+<span><span class="co">#&gt; 80 0.95792181 0.93851370 0.97732992</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; NOTE: The above output only shows five estimates for each assemblage; call iNEXT.object$iNextEst$size_based to view complete output.</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $coverage_based (LCL and UCL are obtained for fixed coverage; interval length is wider due to varying size in bootstraps.)</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt;    Assemblage         SC   t        Method Order.q         qD     qD.LCL</span></span>
-<span><span class="co">#&gt; 1       Macro 0.09081810   1   Rarefaction       0  13.765607  13.246434</span></span>
-<span><span class="co">#&gt; 10      Macro 0.93026235  81   Rarefaction       0 259.802915 249.534681</span></span>
-<span><span class="co">#&gt; 20      Macro 0.96795077 162      Observed       0 312.000000 294.963312</span></span>
-<span><span class="co">#&gt; 30      Macro 0.98185989 239 Extrapolation       0 337.999160 313.746658</span></span>
-<span><span class="co">#&gt; 40      Macro 0.99032209 324 Extrapolation       0 353.816856 324.488417</span></span>
-<span><span class="co">#&gt; 41      Micro 0.05474241   1   Rarefaction       0   5.006711   4.708799</span></span>
-<span><span class="co">#&gt; 50      Micro 0.79818804  74   Rarefaction       0 147.884652 134.633133</span></span>
-<span><span class="co">#&gt; 60      Micro 0.89210493 149      Observed       0 203.000000 182.040894</span></span>
-<span><span class="co">#&gt; 70      Micro 0.93111330 220 Extrapolation       0 234.001881 206.368682</span></span>
-<span><span class="co">#&gt; 80      Micro 0.95792181 298 Extrapolation       0 255.307935 221.842561</span></span>
+<span><span class="co">#&gt; 1       Macro 0.09081810   1   Rarefaction       0  13.765607  13.351705</span></span>
+<span><span class="co">#&gt; 10      Macro 0.93026235  81   Rarefaction       0 259.802915 250.728091</span></span>
+<span><span class="co">#&gt; 20      Macro 0.96795077 162      Observed       0 312.000000 296.427658</span></span>
+<span><span class="co">#&gt; 30      Macro 0.98185989 239 Extrapolation       0 337.999160 316.349470</span></span>
+<span><span class="co">#&gt; 40      Macro 0.99032209 324 Extrapolation       0 353.816856 327.844756</span></span>
+<span><span class="co">#&gt; 41      Micro 0.05474241   1   Rarefaction       0   5.006711   4.678991</span></span>
+<span><span class="co">#&gt; 50      Micro 0.79818804  74   Rarefaction       0 147.884652 134.264639</span></span>
+<span><span class="co">#&gt; 60      Micro 0.89210493 149      Observed       0 203.000000 183.397099</span></span>
+<span><span class="co">#&gt; 70      Micro 0.93111330 220 Extrapolation       0 234.001881 208.840521</span></span>
+<span><span class="co">#&gt; 80      Micro 0.95792181 298 Extrapolation       0 255.307935 224.632593</span></span>
 <span><span class="co">#&gt;        qD.UCL</span></span>
-<span><span class="co">#&gt; 1   14.284781</span></span>
-<span><span class="co">#&gt; 10 270.071149</span></span>
-<span><span class="co">#&gt; 20 329.036688</span></span>
-<span><span class="co">#&gt; 30 362.251663</span></span>
-<span><span class="co">#&gt; 40 383.145296</span></span>
-<span><span class="co">#&gt; 41   5.304624</span></span>
-<span><span class="co">#&gt; 50 161.136171</span></span>
-<span><span class="co">#&gt; 60 223.959106</span></span>
-<span><span class="co">#&gt; 70 261.635080</span></span>
-<span><span class="co">#&gt; 80 288.773310</span></span>
+<span><span class="co">#&gt; 1   14.179509</span></span>
+<span><span class="co">#&gt; 10 268.877739</span></span>
+<span><span class="co">#&gt; 20 327.572342</span></span>
+<span><span class="co">#&gt; 30 359.648851</span></span>
+<span><span class="co">#&gt; 40 379.788957</span></span>
+<span><span class="co">#&gt; 41   5.334431</span></span>
+<span><span class="co">#&gt; 50 161.504665</span></span>
+<span><span class="co">#&gt; 60 222.602901</span></span>
+<span><span class="co">#&gt; 70 259.163241</span></span>
+<span><span class="co">#&gt; 80 285.983278</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; NOTE: The above output only shows five estimates for each assemblage; call iNEXT.object$iNextEst$coverage_based to view complete output.</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $AsyEst: asymptotic diversity estimates along with related statistics.</span></span>
 <span><span class="co">#&gt;   Assemblage         Diversity  Observed Estimator      s.e.       LCL      UCL</span></span>
-<span><span class="co">#&gt; 1      Macro  Species richness 312.00000 371.90698 15.341256 341.83867 401.9753</span></span>
-<span><span class="co">#&gt; 2      Macro Shannon diversity 193.08584 210.89968  4.032823 202.99549 218.8039</span></span>
-<span><span class="co">#&gt; 3      Macro Simpson diversity 142.75175 151.57339  3.938503 143.85407 159.2927</span></span>
-<span><span class="co">#&gt; 4      Micro  Species richness 203.00000 288.74956 20.476528 248.61630 328.8828</span></span>
-<span><span class="co">#&gt; 5      Micro Shannon diversity 123.68027 152.96329  5.803549 141.58854 164.3380</span></span>
-<span><span class="co">#&gt; 6      Micro Simpson diversity  81.96112  91.45944  4.787159  82.07678 100.8421</span></span></code></pre></div>
+<span><span class="co">#&gt; 1      Macro  Species richness 312.00000 371.90698 17.141032 338.31117 405.5028</span></span>
+<span><span class="co">#&gt; 2      Macro Shannon diversity 193.08584 210.89968  3.799469 203.45286 218.3465</span></span>
+<span><span class="co">#&gt; 3      Macro Simpson diversity 142.75175 151.57339  3.498765 144.71594 158.4308</span></span>
+<span><span class="co">#&gt; 4      Micro  Species richness 203.00000 288.74956 20.654730 248.26703 329.2321</span></span>
+<span><span class="co">#&gt; 5      Micro Shannon diversity 123.68027 152.96329  6.449802 140.32191 165.6047</span></span>
+<span><span class="co">#&gt; 6      Micro Simpson diversity  81.96112  91.45944  5.310082  81.05187 101.8670</span></span></code></pre></div>
 <p>And plot it:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">iNEXT</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/iNEXT/man/ggiNEXT.html" class="external-link">ggiNEXT</a></span><span class="op">(</span><span class="va">rare_out_inc</span><span class="op">)</span></span></code></pre></div>
@@ -209,71 +216,71 @@ shape (and exactly this shape) to this format.</p>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt;    Assemblage    m        Method Order.q       qD   qD.LCL   qD.UCL         SC</span></span>
 <span><span class="co">#&gt; 1       Macro    1   Rarefaction       0   1.0000   1.0000   1.0000 0.01518561</span></span>
-<span><span class="co">#&gt; 10      Macro 1882   Rarefaction       0 263.1436 256.2741 270.0131 0.96069585</span></span>
-<span><span class="co">#&gt; 20      Macro 3764      Observed       0 312.0000 301.9448 322.0552 0.98220515</span></span>
-<span><span class="co">#&gt; 30      Macro 5547 Extrapolation       0 336.5489 322.5985 350.4992 0.98960299</span></span>
-<span><span class="co">#&gt; 40      Macro 7528 Extrapolation       0 352.0598 333.2586 370.8610 0.99427725</span></span>
+<span><span class="co">#&gt; 10      Macro 1882   Rarefaction       0 263.1436 255.9064 270.3807 0.96069585</span></span>
+<span><span class="co">#&gt; 20      Macro 3764      Observed       0 312.0000 300.8718 323.1282 0.98220515</span></span>
+<span><span class="co">#&gt; 30      Macro 5547 Extrapolation       0 336.5489 320.3765 352.7212 0.98960299</span></span>
+<span><span class="co">#&gt; 40      Macro 7528 Extrapolation       0 352.0598 330.0338 374.0858 0.99427725</span></span>
 <span><span class="co">#&gt; 41      Micro    1   Rarefaction       0   1.0000   1.0000   1.0000 0.06690595</span></span>
-<span><span class="co">#&gt; 50      Micro  606   Rarefaction       0 149.2826 141.3564 157.2089 0.87805769</span></span>
-<span><span class="co">#&gt; 60      Micro 1212      Observed       0 203.0000 190.7947 215.2053 0.93487158</span></span>
-<span><span class="co">#&gt; 70      Micro 1786 Extrapolation       0 232.8697 215.6780 250.0614 0.95920486</span></span>
-<span><span class="co">#&gt; 80      Micro 2424 Extrapolation       0 253.1737 229.5210 276.8263 0.97574539</span></span>
+<span><span class="co">#&gt; 50      Micro  606   Rarefaction       0 149.2826 141.8074 156.7579 0.87805769</span></span>
+<span><span class="co">#&gt; 60      Micro 1212      Observed       0 203.0000 191.7873 214.2127 0.93487158</span></span>
+<span><span class="co">#&gt; 70      Micro 1786 Extrapolation       0 232.8697 217.9688 247.7707 0.95920486</span></span>
+<span><span class="co">#&gt; 80      Micro 2424 Extrapolation       0 253.1737 233.1166 273.2307 0.97574539</span></span>
 <span><span class="co">#&gt;        SC.LCL     SC.UCL</span></span>
-<span><span class="co">#&gt; 1  0.01392177 0.01644946</span></span>
-<span><span class="co">#&gt; 10 0.95759291 0.96379879</span></span>
-<span><span class="co">#&gt; 20 0.97878696 0.98562334</span></span>
-<span><span class="co">#&gt; 30 0.98598490 0.99322108</span></span>
-<span><span class="co">#&gt; 40 0.99135952 0.99719497</span></span>
-<span><span class="co">#&gt; 41 0.05543199 0.07837990</span></span>
-<span><span class="co">#&gt; 50 0.86721106 0.88890433</span></span>
-<span><span class="co">#&gt; 60 0.92275916 0.94698401</span></span>
-<span><span class="co">#&gt; 70 0.94572825 0.97268146</span></span>
-<span><span class="co">#&gt; 80 0.96335845 0.98813234</span></span>
+<span><span class="co">#&gt; 1  0.01383352 0.01653770</span></span>
+<span><span class="co">#&gt; 10 0.95732316 0.96406854</span></span>
+<span><span class="co">#&gt; 20 0.97821169 0.98619861</span></span>
+<span><span class="co">#&gt; 30 0.98548394 0.99372204</span></span>
+<span><span class="co">#&gt; 40 0.99095381 0.99760068</span></span>
+<span><span class="co">#&gt; 41 0.05726963 0.07654227</span></span>
+<span><span class="co">#&gt; 50 0.86810848 0.88800691</span></span>
+<span><span class="co">#&gt; 60 0.92517820 0.94456497</span></span>
+<span><span class="co">#&gt; 70 0.94761353 0.97079618</span></span>
+<span><span class="co">#&gt; 80 0.96494486 0.98654593</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; NOTE: The above output only shows five estimates for each assemblage; call iNEXT.object$iNextEst$size_based to view complete output.</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $coverage_based (LCL and UCL are obtained for fixed coverage; interval length is wider due to varying size in bootstraps.)</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt;    Assemblage         SC    m        Method Order.q         qD      qD.LCL</span></span>
-<span><span class="co">#&gt; 1       Macro 0.01518581    1   Rarefaction       0   1.000013   0.9707237</span></span>
-<span><span class="co">#&gt; 10      Macro 0.96069585 1882   Rarefaction       0 263.143565 252.7643765</span></span>
-<span><span class="co">#&gt; 20      Macro 0.98220515 3764      Observed       0 312.000000 295.6693888</span></span>
-<span><span class="co">#&gt; 30      Macro 0.98960299 5547 Extrapolation       0 336.548863 315.1092333</span></span>
-<span><span class="co">#&gt; 40      Macro 0.99427725 7528 Extrapolation       0 352.059815 326.6329306</span></span>
-<span><span class="co">#&gt; 41      Micro 0.06690595    1   Rarefaction       0   1.000000   0.8630690</span></span>
-<span><span class="co">#&gt; 50      Micro 0.87805770  606   Rarefaction       0 149.282641 135.6391252</span></span>
-<span><span class="co">#&gt; 60      Micro 0.93487158 1212      Observed       0 203.000000 180.9611466</span></span>
-<span><span class="co">#&gt; 70      Micro 0.95920486 1786 Extrapolation       0 232.869717 202.0814552</span></span>
-<span><span class="co">#&gt; 80      Micro 0.97574539 2424 Extrapolation       0 253.173653 215.5653923</span></span>
+<span><span class="co">#&gt; 1       Macro 0.01518581    1   Rarefaction       0   1.000013   0.9639891</span></span>
+<span><span class="co">#&gt; 10      Macro 0.96069585 1882   Rarefaction       0 263.143565 252.2344689</span></span>
+<span><span class="co">#&gt; 20      Macro 0.98220515 3764      Observed       0 312.000000 292.9711025</span></span>
+<span><span class="co">#&gt; 30      Macro 0.98960299 5547 Extrapolation       0 336.548863 311.0977320</span></span>
+<span><span class="co">#&gt; 40      Macro 0.99427725 7528 Extrapolation       0 352.059815 321.8709526</span></span>
+<span><span class="co">#&gt; 41      Micro 0.06690595    1   Rarefaction       0   1.000000   0.9142025</span></span>
+<span><span class="co">#&gt; 50      Micro 0.87805770  606   Rarefaction       0 149.282641 136.0074413</span></span>
+<span><span class="co">#&gt; 60      Micro 0.93487158 1212      Observed       0 203.000000 184.9150247</span></span>
+<span><span class="co">#&gt; 70      Micro 0.95920486 1786 Extrapolation       0 232.869717 208.3513494</span></span>
+<span><span class="co">#&gt; 80      Micro 0.97574539 2424 Extrapolation       0 253.173653 222.7631796</span></span>
 <span><span class="co">#&gt;        qD.UCL</span></span>
-<span><span class="co">#&gt; 1    1.029303</span></span>
-<span><span class="co">#&gt; 10 273.522754</span></span>
-<span><span class="co">#&gt; 20 328.330611</span></span>
-<span><span class="co">#&gt; 30 357.988493</span></span>
-<span><span class="co">#&gt; 40 377.486700</span></span>
-<span><span class="co">#&gt; 41   1.136931</span></span>
-<span><span class="co">#&gt; 50 162.926157</span></span>
-<span><span class="co">#&gt; 60 225.038853</span></span>
-<span><span class="co">#&gt; 70 263.657979</span></span>
-<span><span class="co">#&gt; 80 290.781914</span></span>
+<span><span class="co">#&gt; 1    1.036037</span></span>
+<span><span class="co">#&gt; 10 274.052661</span></span>
+<span><span class="co">#&gt; 20 331.028897</span></span>
+<span><span class="co">#&gt; 30 361.999994</span></span>
+<span><span class="co">#&gt; 40 382.248678</span></span>
+<span><span class="co">#&gt; 41   1.085798</span></span>
+<span><span class="co">#&gt; 50 162.557841</span></span>
+<span><span class="co">#&gt; 60 221.084975</span></span>
+<span><span class="co">#&gt; 70 257.388085</span></span>
+<span><span class="co">#&gt; 80 283.584127</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; NOTE: The above output only shows five estimates for each assemblage; call iNEXT.object$iNextEst$coverage_based to view complete output.</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $AsyEst: asymptotic diversity estimates along with related statistics.</span></span>
 <span><span class="co">#&gt;   Assemblage         Diversity  Observed Estimator      s.e.       LCL</span></span>
-<span><span class="co">#&gt; 1      Macro  Species richness 312.00000 371.05010 17.248751 337.24317</span></span>
-<span><span class="co">#&gt; 2      Macro Shannon diversity 131.17683 138.38326  2.726730 133.03896</span></span>
-<span><span class="co">#&gt; 3      Macro Simpson diversity  64.73642  65.85180  2.679938  60.59922</span></span>
-<span><span class="co">#&gt; 4      Micro  Species richness 203.00000 282.94680 22.375278 239.09206</span></span>
-<span><span class="co">#&gt; 5      Micro Shannon diversity  57.86578  65.89988  3.441385  59.15489</span></span>
-<span><span class="co">#&gt; 6      Micro Simpson diversity  14.77632  14.94635  1.226502  12.54246</span></span>
+<span><span class="co">#&gt; 1      Macro  Species richness 312.00000 371.05010 17.225522 337.28869</span></span>
+<span><span class="co">#&gt; 2      Macro Shannon diversity 131.17683 138.38326  3.105434 132.29672</span></span>
+<span><span class="co">#&gt; 3      Macro Simpson diversity  64.73642  65.85180  2.690612  60.57830</span></span>
+<span><span class="co">#&gt; 4      Micro  Species richness 203.00000 282.94680 21.496477 240.81448</span></span>
+<span><span class="co">#&gt; 5      Micro Shannon diversity  57.86578  65.89988  3.616186  58.81228</span></span>
+<span><span class="co">#&gt; 6      Micro Simpson diversity  14.77632  14.94635  1.286047  12.42575</span></span>
 <span><span class="co">#&gt;         UCL</span></span>
-<span><span class="co">#&gt; 1 404.85703</span></span>
-<span><span class="co">#&gt; 2 143.72755</span></span>
-<span><span class="co">#&gt; 3  71.10438</span></span>
-<span><span class="co">#&gt; 4 326.80154</span></span>
-<span><span class="co">#&gt; 5  72.64487</span></span>
-<span><span class="co">#&gt; 6  17.35025</span></span></code></pre></div>
+<span><span class="co">#&gt; 1 404.81150</span></span>
+<span><span class="co">#&gt; 2 144.46980</span></span>
+<span><span class="co">#&gt; 3  71.12530</span></span>
+<span><span class="co">#&gt; 4 325.07912</span></span>
+<span><span class="co">#&gt; 5  72.98747</span></span>
+<span><span class="co">#&gt; 6  17.46696</span></span></code></pre></div>
 <p>And plot it:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">iNEXT</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/iNEXT/man/ggiNEXT.html" class="external-link">ggiNEXT</a></span><span class="op">(</span><span class="va">rare_out_abun</span><span class="op">)</span></span></code></pre></div>
