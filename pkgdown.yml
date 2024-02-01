@@ -3,7 +3,7 @@ pkgdown: 2.0.7
 pkgdown_sha: ~
 articles:
   plotting-warande: plotting-warande.html
-last_built: 2024-02-01T09:02Z
+last_built: 2024-02-01T09:04Z
 urls:
   reference: https://pietrh.github.io/vlindersRarefaction/reference
   article: https://pietrh.github.io/vlindersRarefaction/articles
