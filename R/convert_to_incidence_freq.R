@@ -56,9 +56,13 @@ convert_to_incidence_freq <- function(input_dataframe, assemblage) {
 
   # combine into output obj -------------------------------------------------
 
-  list(
-    Macro = c(number_of_sampling_units$Macro, incidence_frequencies$Macro),
-    Micro = c(number_of_sampling_units$Micro, incidence_frequencies$Micro)
-  )
-
+  # Take the values in the variable to group by, and look up the number of
+  # sampling units and incidence frequencies for them. Combine them into a list
+  # and name the elements after the values
+  group_values(grouped_df) %>%
+    purrr::map(~ c(
+      purrr::chuck(number_of_sampling_units, .x),
+      purrr::chuck(incidence_frequencies, .x)
+    )) %>%
+    purrr::set_names(group_values(grouped_df))
 }
