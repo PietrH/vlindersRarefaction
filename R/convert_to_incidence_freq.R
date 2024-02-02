@@ -7,12 +7,14 @@
 #' in.
 #'
 #' @param input_dataframe dataframe with exactly the same columns as `tblWarandepark.csv`
+#' @param assemblage variable in `input_dataframe` to group by.
+#' Every value in this column will result in a seperate curve in the iNEXT output.
 #'
 #' @return a list in the format as is expected by iNEXT when datatype is set to incidence_freq
 #' @export
 #'
-#' @examples \dontrun{convert_to_incidence_freq(warande)}
-convert_to_incidence_freq <- function(input_dataframe) {
+#' @examples \dontrun{convert_to_incidence_freq(warande, MicroMacro)}
+convert_to_incidence_freq <- function(input_dataframe, assemblage) {
   # assert that the input has the expected shape
   check_input_file(input_dataframe)
 
