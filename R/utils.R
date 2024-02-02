@@ -34,3 +34,19 @@ check_input_file <- function(input_dataframe) {
       )
   ))
 }
+
+#' Helper to get values from dplyr groups
+#'
+#' Extension on dplyr::group_data()
+#' @inheritParams dplyr::group_data
+#'
+#' @return Character vector containing the values of the groups in `.data`
+#'
+#' @noRd
+#' @examples
+#' # example code
+#' warande %>% dplyr::group_by(MicroMacro) %>% group_values()
+group_values <- function(.data) {
+  dplyr::group_data(.data) %>%
+    dplyr::pull(1)
+}
