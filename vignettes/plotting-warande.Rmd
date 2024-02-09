@@ -1,12 +1,12 @@
 ---
-title: "Creating some rarefaction curves for butteryfly data"
+title: "plotting-warande"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{plotting-warande}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
-
+# Creating some rarefaction curves for butteryfly data
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
