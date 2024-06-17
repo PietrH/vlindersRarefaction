@@ -1,5 +1,5 @@
 ---
-title: "plotting-warande"
+title: "Basic plotting of rarefaction curves"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{plotting-warande}

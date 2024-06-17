@@ -1,5 +1,5 @@
 ---
-title: "plot-by-area-and-micromacro"
+title: "Plot multiple rarefaction curves, split by micromacro for each area."
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{plot-by-area-and-micromacro}
