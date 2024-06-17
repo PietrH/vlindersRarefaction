@@ -18,7 +18,8 @@ Imports:
     dplyr,
     glue,
     magrittr,
-    purrr
+    purrr,
+    rlang
 Suggests: 
     ggplot2,
     iNEXT,

@@ -33,8 +33,8 @@ convert_to_incidence_freq <- function(input_dataframe, assemblage = NULL) {
       dplyr::n_distinct(dplyr::pull(input_dataframe, date))
     ## calculate incidence frequencies -----------------------------------------
     incidence_frequencies <-
-      dplyr::count(input_dataframe, species_name) %>%
-      dplyr::pull(n)
+      dplyr::count(input_dataframe, .data$species_name) %>%
+      dplyr::pull(.data$n)
     ## combine into output obj -------------------------------------------------
     return(list(c(number_of_sampling_units, incidence_frequencies)))
 
@@ -54,8 +54,8 @@ convert_to_incidence_freq <- function(input_dataframe, assemblage = NULL) {
 
   incidence_frequencies <-
     grouped_df %>%
-    dplyr::group_map(~ dplyr::count(.x, species_name)) %>%
-    purrr::map(~ dplyr::pull(.x, n)) %>%
+    dplyr::group_map(~ dplyr::count(.x, .data$species_name)) %>%
+    purrr::map(~ dplyr::pull(.x, .data$n)) %>%
     purrr::set_names(group_values(grouped_df))
 
   ## combine into output obj -------------------------------------------------
