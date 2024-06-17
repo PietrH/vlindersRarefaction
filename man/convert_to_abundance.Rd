@@ -8,6 +8,9 @@ convert_to_abundance(input_dataframe, assemblage)
 }
 \arguments{
 \item{input_dataframe}{dataframe with exactly the same columns as \code{tblWarandepark.csv}}
+
+\item{assemblage}{variable in \code{input_dataframe} to group by.
+Every value in this column will result in a seperate curve in the iNEXT output.}
 }
 \value{
 a list in the format as is expected by iNEXT when datatype is set to abundance

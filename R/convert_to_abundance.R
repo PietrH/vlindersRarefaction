@@ -6,6 +6,8 @@
 #' number of observed individuals.
 #'
 #' @param input_dataframe dataframe with exactly the same columns as `tblWarandepark.csv`
+#' @param assemblage variable in `input_dataframe` to group by.
+#' Every value in this column will result in a seperate curve in the iNEXT output.
 #'
 #' @return a list in the format as is expected by iNEXT when datatype is set to abundance
 #' @export
