@@ -1,9 +1,11 @@
-pandoc: 2.19.2
-pkgdown: 2.0.7
+pandoc: 3.1.11
+pkgdown: 2.0.9
 pkgdown_sha: ~
 articles:
+  plot-by-area-and-micromacro: plot-by-area-and-micromacro.html
+  plotting-waarnemingen-data: plotting-waarnemingen-data.html
   plotting-warande: plotting-warande.html
-last_built: 2024-02-01T09:22Z
+last_built: 2024-06-17T17:14Z
 urls:
   reference: https://pietrh.github.io/vlindersRarefaction/reference
   article: https://pietrh.github.io/vlindersRarefaction/articles

@@ -6,12 +6,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="vlindersRarefaction">
-<title>Creating some rarefaction curves for butteryfly data • vlindersRarefaction</title>
+<title>Basic plotting of rarefaction curves • vlindersRarefaction</title>
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
-<!-- bootstrap-toc --><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js" integrity="sha256-4veVQbu7//Lk5TSmc7YV48MxtMy98e26cf5MrgZYnwo=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Creating some rarefaction curves for butteryfly data">
+<!-- bootstrap-toc --><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js" integrity="sha256-4veVQbu7//Lk5TSmc7YV48MxtMy98e26cf5MrgZYnwo=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js" integrity="sha512-7O5pXpc0oCRrxk8RUfDYFgn0nO1t+jLuIOQdOMRp4APB7uZ4vSjspzp5y6YDtDs4VzUSTbWzBFZ/LKJhnyFOKw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Basic plotting of rarefaction curves">
 <meta property="og:description" content="vlindersRarefaction">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -22,11 +22,11 @@
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
     
 
-    <nav class="navbar fixed-top navbar-light navbar-expand-lg bg-light"><div class="container">
+    <nav class="navbar fixed-top navbar-light navbar-expand-lg bg-light" data-bs-theme="light"><div class="container">
     
     <a class="navbar-brand me-2" href="../index.html">vlindersRarefaction</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,7 +41,9 @@
 <li class="active nav-item dropdown">
   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
   <div class="dropdown-menu" aria-labelledby="dropdown-articles">
-    <a class="dropdown-item" href="../articles/plotting-warande.html">Creating some rarefaction curves for butteryfly data</a>
+    <a class="dropdown-item" href="../articles/plot-by-area-and-micromacro.html">Plot multiple rarefaction curves, split by micromacro for each area.</a>
+    <a class="dropdown-item" href="../articles/plotting-waarnemingen-data.html">Plotting data from a waarnemingen.be export</a>
+    <a class="dropdown-item" href="../articles/plotting-warande.html">Basic plotting of rarefaction curves</a>
   </div>
 </li>
       </ul>
@@ -68,7 +70,7 @@
 
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
-      <img src="" class="logo" alt=""><h1>Creating some rarefaction curves for butteryfly data</h1>
+      <img src="" class="logo" alt=""><h1>Basic plotting of rarefaction curves</h1>
             
       
       <small class="dont-index">Source: <a href="https://github.com/PietrH/vlindersRarefaction/blob/HEAD/vignettes/plotting-warande.Rmd" class="external-link"><code>vignettes/plotting-warande.Rmd</code></a></small>
@@ -77,6 +79,9 @@
 
     
     
+<div class="section level2">
+<h2 id="creating-some-rarefaction-curves-for-butteryfly-data">Creating some rarefaction curves for butteryfly data<a class="anchor" aria-label="anchor" href="#creating-some-rarefaction-curves-for-butteryfly-data"></a>
+</h2>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://pietrh.github.io/vlindersRarefaction/">vlindersRarefaction</a></span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
@@ -89,23 +94,27 @@
 <span><span class="co">#&gt; $ year         <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 2009, 2009, 2009, 2009, 2010, 2010, 2010, 2010, 2010, 201…</span></span>
 <span><span class="co">#&gt; $ number       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, …</span></span>
 <span><span class="co">#&gt; $ MicroMacro   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Micro", "Macro", "Macro", "Macro", "Macro", "Macro", "Ma…</span></span></code></pre></div>
-<div class="section level2">
-<h2 id="incidence-based-rarefaction-curve">Incidence based rarefaction curve<a class="anchor" aria-label="anchor" href="#incidence-based-rarefaction-curve"></a>
-</h2>
-<p>Splitting it up in <code>Micro</code> and <code>Macro</code></p>
 <div class="section level3">
-<h3 id="getting-the-data-in-the-right-shape">Getting the data in the right shape<a class="anchor" aria-label="anchor" href="#getting-the-data-in-the-right-shape"></a>
+<h3 id="incidence-based-rarefaction-curve">Incidence based rarefaction curve<a class="anchor" aria-label="anchor" href="#incidence-based-rarefaction-curve"></a>
 </h3>
+<p>Splitting it up in <code>Micro</code> and <code>Macro</code></p>
+<div class="section level4">
+<h4 id="getting-the-data-in-the-right-shape">Getting the data in the right shape<a class="anchor" aria-label="anchor" href="#getting-the-data-in-the-right-shape"></a>
+</h4>
 <p>iNEXT expects incidence data to consist of a list of frequencies,
 with the first element of the list the number of sampling units,
 followed by the incidence frequencies. The length of the list should be
 the number of observed species minus one.</p>
 <p>This package provides a function to convert a dataframe with a known
 shape (and exactly this shape) to this format.</p>
+<p>You can provide a column that will be used to split your dataframe
+into assemblages.</p>
+<p>Let’s set our assemblage to MicroMacro, so have one assembly for the
+Micro butterflies, and one for the Macro butterflies.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">rare_out_inc</span> <span class="op">&lt;-</span> </span>
 <span>  <span class="fu">iNEXT</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/iNEXT/man/iNEXT.html" class="external-link">iNEXT</a></span><span class="op">(</span></span>
-<span>    <span class="fu"><a href="../reference/convert_to_incidence_freq.html">convert_to_incidence_freq</a></span><span class="op">(</span><span class="va">warande</span><span class="op">)</span>,</span>
+<span>    <span class="fu"><a href="../reference/convert_to_incidence_freq.html">convert_to_incidence_freq</a></span><span class="op">(</span><span class="va">warande</span>, assemblage <span class="op">=</span> <span class="va">MicroMacro</span><span class="op">)</span>,</span>
 <span>    datatype <span class="op">=</span> <span class="st">"incidence_freq"</span>,</span>
 <span>    nboot <span class="op">=</span> <span class="fl">50</span> <span class="co"># you might want to set this a bit higher</span></span>
 <span>    <span class="op">)</span></span>
@@ -123,82 +132,82 @@ shape (and exactly this shape) to this format.</p>
 <span><span class="co">#&gt; $size_based (LCL and UCL are obtained for fixed size.)</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt;    Assemblage   t        Method Order.q         qD     qD.LCL     qD.UCL</span></span>
-<span><span class="co">#&gt; 1       Macro   1   Rarefaction       0  13.765432  13.245141  14.285723</span></span>
-<span><span class="co">#&gt; 10      Macro  81   Rarefaction       0 259.802910 250.619429 268.986392</span></span>
-<span><span class="co">#&gt; 20      Macro 162      Observed       0 312.000000 298.010957 325.989043</span></span>
-<span><span class="co">#&gt; 30      Macro 239 Extrapolation       0 337.999160 319.766242 356.232079</span></span>
-<span><span class="co">#&gt; 40      Macro 324 Extrapolation       0 353.816856 330.747774 376.885939</span></span>
-<span><span class="co">#&gt; 41      Micro   1   Rarefaction       0   5.006711   4.621654   5.391769</span></span>
-<span><span class="co">#&gt; 50      Micro  74   Rarefaction       0 147.884654 137.259141 158.510167</span></span>
-<span><span class="co">#&gt; 60      Micro 149      Observed       0 203.000000 187.241687 218.758313</span></span>
-<span><span class="co">#&gt; 70      Micro 220 Extrapolation       0 234.001881 214.162157 253.841605</span></span>
-<span><span class="co">#&gt; 80      Micro 298 Extrapolation       0 255.307935 230.441509 280.174362</span></span>
+<span><span class="co">#&gt; 1       Macro   1   Rarefaction       0  13.765432  13.197970  14.332895</span></span>
+<span><span class="co">#&gt; 10      Macro  81   Rarefaction       0 259.802910 251.861150 267.744671</span></span>
+<span><span class="co">#&gt; 20      Macro 162      Observed       0 312.000000 298.979487 325.020513</span></span>
+<span><span class="co">#&gt; 30      Macro 239 Extrapolation       0 337.999160 319.467414 356.530907</span></span>
+<span><span class="co">#&gt; 40      Macro 324 Extrapolation       0 353.816856 329.290932 378.342781</span></span>
+<span><span class="co">#&gt; 41      Micro   1   Rarefaction       0   5.006711   4.615889   5.397534</span></span>
+<span><span class="co">#&gt; 50      Micro  74   Rarefaction       0 147.884654 138.347199 157.422109</span></span>
+<span><span class="co">#&gt; 60      Micro 149      Observed       0 203.000000 188.896261 217.103739</span></span>
+<span><span class="co">#&gt; 70      Micro 220 Extrapolation       0 234.001881 215.712868 252.290894</span></span>
+<span><span class="co">#&gt; 80      Micro 298 Extrapolation       0 255.307935 232.128701 278.487170</span></span>
 <span><span class="co">#&gt;            SC     SC.LCL     SC.UCL</span></span>
-<span><span class="co">#&gt; 1  0.09081692 0.08517583 0.09645802</span></span>
-<span><span class="co">#&gt; 10 0.93026235 0.92288634 0.93763835</span></span>
-<span><span class="co">#&gt; 20 0.96795077 0.96154265 0.97435890</span></span>
-<span><span class="co">#&gt; 30 0.98185989 0.97531547 0.98840431</span></span>
-<span><span class="co">#&gt; 40 0.99032209 0.98503424 0.99560994</span></span>
-<span><span class="co">#&gt; 41 0.05474241 0.04722618 0.06225864</span></span>
-<span><span class="co">#&gt; 50 0.79818804 0.77547882 0.82089726</span></span>
-<span><span class="co">#&gt; 60 0.89210493 0.87148117 0.91272869</span></span>
-<span><span class="co">#&gt; 70 0.93111330 0.90925878 0.95296781</span></span>
-<span><span class="co">#&gt; 80 0.95792181 0.93864259 0.97720103</span></span>
+<span><span class="co">#&gt; 1  0.09081692 0.08504943 0.09658442</span></span>
+<span><span class="co">#&gt; 10 0.93026235 0.92382346 0.93670123</span></span>
+<span><span class="co">#&gt; 20 0.96795077 0.96123655 0.97466500</span></span>
+<span><span class="co">#&gt; 30 0.98185989 0.97485443 0.98886535</span></span>
+<span><span class="co">#&gt; 40 0.99032209 0.98459226 0.99605192</span></span>
+<span><span class="co">#&gt; 41 0.05474241 0.04716427 0.06232055</span></span>
+<span><span class="co">#&gt; 50 0.79818804 0.77706973 0.81930635</span></span>
+<span><span class="co">#&gt; 60 0.89210493 0.87279388 0.91141598</span></span>
+<span><span class="co">#&gt; 70 0.93111330 0.91215329 0.95007330</span></span>
+<span><span class="co">#&gt; 80 0.95792181 0.94150576 0.97433786</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; NOTE: The above output only shows five estimates for each assemblage; call iNEXT.object$iNextEst$size_based to view complete output.</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $coverage_based (LCL and UCL are obtained for fixed coverage; interval length is wider due to varying size in bootstraps.)</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt;    Assemblage         SC   t        Method Order.q         qD     qD.LCL</span></span>
-<span><span class="co">#&gt; 1       Macro 0.09081810   1   Rarefaction       0  13.765607  13.266380</span></span>
-<span><span class="co">#&gt; 10      Macro 0.93026235  81   Rarefaction       0 259.802915 245.927419</span></span>
-<span><span class="co">#&gt; 20      Macro 0.96795077 162      Observed       0 312.000000 290.333898</span></span>
-<span><span class="co">#&gt; 30      Macro 0.98185989 239 Extrapolation       0 337.999160 311.502399</span></span>
-<span><span class="co">#&gt; 40      Macro 0.99032209 324 Extrapolation       0 353.816856 323.432619</span></span>
-<span><span class="co">#&gt; 41      Micro 0.05474241   1   Rarefaction       0   5.006711   4.597889</span></span>
-<span><span class="co">#&gt; 50      Micro 0.79818804  74   Rarefaction       0 147.884652 131.900335</span></span>
-<span><span class="co">#&gt; 60      Micro 0.89210493 149      Observed       0 203.000000 179.028174</span></span>
-<span><span class="co">#&gt; 70      Micro 0.93111330 220 Extrapolation       0 234.001881 204.528640</span></span>
-<span><span class="co">#&gt; 80      Micro 0.95792181 298 Extrapolation       0 255.307935 221.041284</span></span>
+<span><span class="co">#&gt; 1       Macro 0.09081810   1   Rarefaction       0  13.765607  13.201546</span></span>
+<span><span class="co">#&gt; 10      Macro 0.93026235  81   Rarefaction       0 259.802915 247.878558</span></span>
+<span><span class="co">#&gt; 20      Macro 0.96795077 162      Observed       0 312.000000 290.971001</span></span>
+<span><span class="co">#&gt; 30      Macro 0.98185989 239 Extrapolation       0 337.999160 309.959368</span></span>
+<span><span class="co">#&gt; 40      Macro 0.99032209 324 Extrapolation       0 353.816856 320.697469</span></span>
+<span><span class="co">#&gt; 41      Micro 0.05474241   1   Rarefaction       0   5.006711   4.599338</span></span>
+<span><span class="co">#&gt; 50      Micro 0.79818804  74   Rarefaction       0 147.884652 133.395165</span></span>
+<span><span class="co">#&gt; 60      Micro 0.89210493 149      Observed       0 203.000000 180.158429</span></span>
+<span><span class="co">#&gt; 70      Micro 0.93111330 220 Extrapolation       0 234.001881 205.719840</span></span>
+<span><span class="co">#&gt; 80      Micro 0.95792181 298 Extrapolation       0 255.307935 222.683841</span></span>
 <span><span class="co">#&gt;        qD.UCL</span></span>
-<span><span class="co">#&gt; 1   14.264834</span></span>
-<span><span class="co">#&gt; 10 273.678411</span></span>
-<span><span class="co">#&gt; 20 333.666102</span></span>
-<span><span class="co">#&gt; 30 364.495921</span></span>
-<span><span class="co">#&gt; 40 384.201094</span></span>
-<span><span class="co">#&gt; 41   5.415534</span></span>
-<span><span class="co">#&gt; 50 163.868969</span></span>
-<span><span class="co">#&gt; 60 226.971826</span></span>
-<span><span class="co">#&gt; 70 263.475122</span></span>
-<span><span class="co">#&gt; 80 289.574587</span></span>
+<span><span class="co">#&gt; 1   14.329668</span></span>
+<span><span class="co">#&gt; 10 271.727272</span></span>
+<span><span class="co">#&gt; 20 333.028999</span></span>
+<span><span class="co">#&gt; 30 366.038953</span></span>
+<span><span class="co">#&gt; 40 386.936244</span></span>
+<span><span class="co">#&gt; 41   5.414084</span></span>
+<span><span class="co">#&gt; 50 162.374138</span></span>
+<span><span class="co">#&gt; 60 225.841571</span></span>
+<span><span class="co">#&gt; 70 262.283922</span></span>
+<span><span class="co">#&gt; 80 287.932030</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; NOTE: The above output only shows five estimates for each assemblage; call iNEXT.object$iNextEst$coverage_based to view complete output.</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $AsyEst: asymptotic diversity estimates along with related statistics.</span></span>
-<span><span class="co">#&gt;   Assemblage         Diversity  Observed Estimator      s.e.       LCL      UCL</span></span>
-<span><span class="co">#&gt; 1      Macro  Species richness 312.00000 371.90698 16.837782 338.90553 404.9084</span></span>
-<span><span class="co">#&gt; 2      Macro Shannon diversity 193.08584 210.89968  4.433147 202.21087 219.5885</span></span>
-<span><span class="co">#&gt; 3      Macro Simpson diversity 142.75175 151.57339  4.109634 143.51866 159.6281</span></span>
-<span><span class="co">#&gt; 4      Micro  Species richness 203.00000 288.74956 21.842015 245.94000 331.5591</span></span>
-<span><span class="co">#&gt; 5      Micro Shannon diversity 123.68027 152.96329  6.835325 139.56630 166.3603</span></span>
-<span><span class="co">#&gt; 6      Micro Simpson diversity  81.96112  91.45944  5.016993  81.62631 101.2926</span></span></code></pre></div>
+<span><span class="co">#&gt;   Assemblage         Diversity  Observed Estimator      s.e.      LCL      UCL</span></span>
+<span><span class="co">#&gt; 1      Macro  Species richness 312.00000 371.90698 16.735917 339.1052 404.7088</span></span>
+<span><span class="co">#&gt; 2      Macro Shannon diversity 193.08584 210.89968  4.001470 203.0569 218.7424</span></span>
+<span><span class="co">#&gt; 3      Macro Simpson diversity 142.75175 151.57339  3.954126 143.8234 159.3233</span></span>
+<span><span class="co">#&gt; 4      Micro  Species richness 203.00000 288.74956 19.971133 249.6069 327.8923</span></span>
+<span><span class="co">#&gt; 5      Micro Shannon diversity 123.68027 152.96329  6.798172 139.6391 166.2875</span></span>
+<span><span class="co">#&gt; 6      Micro Simpson diversity  81.96112  91.45944  5.793695  80.1040 102.8149</span></span></code></pre></div>
 <p>And plot it:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">iNEXT</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/iNEXT/man/ggiNEXT.html" class="external-link">ggiNEXT</a></span><span class="op">(</span><span class="va">rare_out_inc</span><span class="op">)</span></span></code></pre></div>
 <p><img src="plotting-warande_files/figure-html/plot%20incidence%20based%20curve-1.png" width="700"></p>
 </div>
 </div>
-<div class="section level2">
-<h2 id="abundance-based">Abundance based<a class="anchor" aria-label="anchor" href="#abundance-based"></a>
-</h2>
-<p>Splitting it up in <code>Micro</code> and <code>Macro</code></p>
 <div class="section level3">
-<h3 id="getting-the-data-in-the-right-shape-1">Getting the data in the right shape<a class="anchor" aria-label="anchor" href="#getting-the-data-in-the-right-shape-1"></a>
+<h3 id="abundance-based">Abundance based<a class="anchor" aria-label="anchor" href="#abundance-based"></a>
 </h3>
+<p>Splitting it up in <code>Micro</code> and <code>Macro</code></p>
+<div class="section level4">
+<h4 id="getting-the-data-in-the-right-shape-1">Getting the data in the right shape<a class="anchor" aria-label="anchor" href="#getting-the-data-in-the-right-shape-1"></a>
+</h4>
 <p>Plug this into iNEXT:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">rare_out_abun</span> <span class="op">&lt;-</span> </span>
-<span>  <span class="fu">iNEXT</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/iNEXT/man/iNEXT.html" class="external-link">iNEXT</a></span><span class="op">(</span><span class="fu"><a href="../reference/convert_to_abundance.html">convert_to_abundance</a></span><span class="op">(</span><span class="va">warande</span><span class="op">)</span>,</span>
+<span>  <span class="fu">iNEXT</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/iNEXT/man/iNEXT.html" class="external-link">iNEXT</a></span><span class="op">(</span><span class="fu"><a href="../reference/convert_to_abundance.html">convert_to_abundance</a></span><span class="op">(</span><span class="va">warande</span>, assemblage <span class="op">=</span> <span class="va">MicroMacro</span><span class="op">)</span>,</span>
 <span>             datatype <span class="op">=</span> <span class="st">"abundance"</span>,</span>
 <span>             nboot <span class="op">=</span> <span class="fl">50</span> <span class="co"># you might want to set this a bit higher</span></span>
 <span>             <span class="op">)</span></span>
@@ -216,75 +225,76 @@ shape (and exactly this shape) to this format.</p>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt;    Assemblage    m        Method Order.q       qD   qD.LCL   qD.UCL         SC</span></span>
 <span><span class="co">#&gt; 1       Macro    1   Rarefaction       0   1.0000   1.0000   1.0000 0.01518561</span></span>
-<span><span class="co">#&gt; 10      Macro 1882   Rarefaction       0 263.1436 256.4991 269.7880 0.96069585</span></span>
-<span><span class="co">#&gt; 20      Macro 3764      Observed       0 312.0000 302.4437 321.5563 0.98220515</span></span>
-<span><span class="co">#&gt; 30      Macro 5547 Extrapolation       0 336.5489 324.0201 349.0777 0.98960299</span></span>
-<span><span class="co">#&gt; 40      Macro 7528 Extrapolation       0 352.0598 335.0589 369.0608 0.99427725</span></span>
+<span><span class="co">#&gt; 10      Macro 1882   Rarefaction       0 263.1436 253.8563 272.4309 0.96069585</span></span>
+<span><span class="co">#&gt; 20      Macro 3764      Observed       0 312.0000 299.0934 324.9066 0.98220515</span></span>
+<span><span class="co">#&gt; 30      Macro 5547 Extrapolation       0 336.5489 318.9805 354.1172 0.98960299</span></span>
+<span><span class="co">#&gt; 40      Macro 7528 Extrapolation       0 352.0598 328.3744 375.7452 0.99427725</span></span>
 <span><span class="co">#&gt; 41      Micro    1   Rarefaction       0   1.0000   1.0000   1.0000 0.06690595</span></span>
-<span><span class="co">#&gt; 50      Micro  606   Rarefaction       0 149.2826 142.6467 155.9186 0.87805769</span></span>
-<span><span class="co">#&gt; 60      Micro 1212      Observed       0 203.0000 193.3117 212.6883 0.93487158</span></span>
-<span><span class="co">#&gt; 70      Micro 1786 Extrapolation       0 232.8697 219.7157 246.0238 0.95920486</span></span>
-<span><span class="co">#&gt; 80      Micro 2424 Extrapolation       0 253.1737 235.1758 271.1715 0.97574539</span></span>
+<span><span class="co">#&gt; 50      Micro  606   Rarefaction       0 149.2826 140.7580 157.8073 0.87805769</span></span>
+<span><span class="co">#&gt; 60      Micro 1212      Observed       0 203.0000 188.6808 217.3192 0.93487158</span></span>
+<span><span class="co">#&gt; 70      Micro 1786 Extrapolation       0 232.8697 213.1493 252.5901 0.95920486</span></span>
+<span><span class="co">#&gt; 80      Micro 2424 Extrapolation       0 253.1737 227.1766 279.1707 0.97574539</span></span>
 <span><span class="co">#&gt;        SC.LCL     SC.UCL</span></span>
-<span><span class="co">#&gt; 1  0.01403361 0.01633762</span></span>
-<span><span class="co">#&gt; 10 0.95795792 0.96343378</span></span>
-<span><span class="co">#&gt; 20 0.97943744 0.98497286</span></span>
-<span><span class="co">#&gt; 30 0.98615218 0.99305381</span></span>
-<span><span class="co">#&gt; 40 0.99120865 0.99734584</span></span>
-<span><span class="co">#&gt; 41 0.05801637 0.07579552</span></span>
-<span><span class="co">#&gt; 50 0.86941199 0.88670340</span></span>
-<span><span class="co">#&gt; 60 0.92521940 0.94452377</span></span>
-<span><span class="co">#&gt; 70 0.94810359 0.97030612</span></span>
-<span><span class="co">#&gt; 80 0.96592037 0.98557042</span></span>
+<span><span class="co">#&gt; 1  0.01401061 0.01636062</span></span>
+<span><span class="co">#&gt; 10 0.95735174 0.96403996</span></span>
+<span><span class="co">#&gt; 20 0.97859523 0.98581507</span></span>
+<span><span class="co">#&gt; 30 0.98541915 0.99378684</span></span>
+<span><span class="co">#&gt; 40 0.99072191 0.99783258</span></span>
+<span><span class="co">#&gt; 41 0.05695751 0.07685438</span></span>
+<span><span class="co">#&gt; 50 0.86533741 0.89077798</span></span>
+<span><span class="co">#&gt; 60 0.92185533 0.94788784</span></span>
+<span><span class="co">#&gt; 70 0.94546342 0.97294629</span></span>
+<span><span class="co">#&gt; 80 0.96349177 0.98799902</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; NOTE: The above output only shows five estimates for each assemblage; call iNEXT.object$iNextEst$size_based to view complete output.</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $coverage_based (LCL and UCL are obtained for fixed coverage; interval length is wider due to varying size in bootstraps.)</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt;    Assemblage         SC    m        Method Order.q         qD      qD.LCL</span></span>
-<span><span class="co">#&gt; 1       Macro 0.01518581    1   Rarefaction       0   1.000013   0.9699234</span></span>
-<span><span class="co">#&gt; 10      Macro 0.96069585 1882   Rarefaction       0 263.143565 253.2135532</span></span>
-<span><span class="co">#&gt; 20      Macro 0.98220515 3764      Observed       0 312.000000 296.9635376</span></span>
-<span><span class="co">#&gt; 30      Macro 0.98960299 5547 Extrapolation       0 336.548863 316.1240847</span></span>
-<span><span class="co">#&gt; 40      Macro 0.99427725 7528 Extrapolation       0 352.059815 326.8827939</span></span>
-<span><span class="co">#&gt; 41      Micro 0.06690595    1   Rarefaction       0   1.000000   0.9274822</span></span>
-<span><span class="co">#&gt; 50      Micro 0.87805770  606   Rarefaction       0 149.282641 138.0479881</span></span>
-<span><span class="co">#&gt; 60      Micro 0.93487158 1212      Observed       0 203.000000 186.8251174</span></span>
-<span><span class="co">#&gt; 70      Micro 0.95920486 1786 Extrapolation       0 232.869717 211.4164765</span></span>
-<span><span class="co">#&gt; 80      Micro 0.97574539 2424 Extrapolation       0 253.173653 226.9984151</span></span>
+<span><span class="co">#&gt; 1       Macro 0.01518581    1   Rarefaction       0   1.000013   0.9667868</span></span>
+<span><span class="co">#&gt; 10      Macro 0.96069585 1882   Rarefaction       0 263.143565 249.7041435</span></span>
+<span><span class="co">#&gt; 20      Macro 0.98220515 3764      Observed       0 312.000000 291.4637490</span></span>
+<span><span class="co">#&gt; 30      Macro 0.98960299 5547 Extrapolation       0 336.548863 308.4736916</span></span>
+<span><span class="co">#&gt; 40      Macro 0.99427725 7528 Extrapolation       0 352.059815 318.4303637</span></span>
+<span><span class="co">#&gt; 41      Micro 0.06690595    1   Rarefaction       0   1.000000   0.9173293</span></span>
+<span><span class="co">#&gt; 50      Micro 0.87805770  606   Rarefaction       0 149.282641 133.0267913</span></span>
+<span><span class="co">#&gt; 60      Micro 0.93487158 1212      Observed       0 203.000000 177.3717340</span></span>
+<span><span class="co">#&gt; 70      Micro 0.95920486 1786 Extrapolation       0 232.869717 200.2388336</span></span>
+<span><span class="co">#&gt; 80      Micro 0.97574539 2424 Extrapolation       0 253.173653 214.6256516</span></span>
 <span><span class="co">#&gt;        qD.UCL</span></span>
-<span><span class="co">#&gt; 1    1.030103</span></span>
-<span><span class="co">#&gt; 10 273.073577</span></span>
-<span><span class="co">#&gt; 20 327.036462</span></span>
-<span><span class="co">#&gt; 30 356.973642</span></span>
-<span><span class="co">#&gt; 40 377.236837</span></span>
-<span><span class="co">#&gt; 41   1.072518</span></span>
-<span><span class="co">#&gt; 50 160.517294</span></span>
-<span><span class="co">#&gt; 60 219.174883</span></span>
-<span><span class="co">#&gt; 70 254.322958</span></span>
-<span><span class="co">#&gt; 80 279.348892</span></span>
+<span><span class="co">#&gt; 1    1.033240</span></span>
+<span><span class="co">#&gt; 10 276.582987</span></span>
+<span><span class="co">#&gt; 20 332.536251</span></span>
+<span><span class="co">#&gt; 30 364.624035</span></span>
+<span><span class="co">#&gt; 40 385.689267</span></span>
+<span><span class="co">#&gt; 41   1.082671</span></span>
+<span><span class="co">#&gt; 50 165.538491</span></span>
+<span><span class="co">#&gt; 60 228.628266</span></span>
+<span><span class="co">#&gt; 70 265.500601</span></span>
+<span><span class="co">#&gt; 80 291.721655</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; NOTE: The above output only shows five estimates for each assemblage; call iNEXT.object$iNextEst$coverage_based to view complete output.</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $AsyEst: asymptotic diversity estimates along with related statistics.</span></span>
 <span><span class="co">#&gt;   Assemblage         Diversity  Observed Estimator      s.e.       LCL</span></span>
-<span><span class="co">#&gt; 1      Macro  Species richness 312.00000 371.05010 14.996169 341.65815</span></span>
-<span><span class="co">#&gt; 2      Macro Shannon diversity 131.17683 138.38326  2.758840 132.97603</span></span>
-<span><span class="co">#&gt; 3      Macro Simpson diversity  64.73642  65.85180  2.573427  60.80798</span></span>
-<span><span class="co">#&gt; 4      Micro  Species richness 203.00000 282.94680 21.433507 240.93790</span></span>
-<span><span class="co">#&gt; 5      Micro Shannon diversity  57.86578  65.89988  3.488254  59.06302</span></span>
-<span><span class="co">#&gt; 6      Micro Simpson diversity  14.77632  14.94635  1.118992  12.75317</span></span>
+<span><span class="co">#&gt; 1      Macro  Species richness 312.00000 371.05010 16.483480 338.74307</span></span>
+<span><span class="co">#&gt; 2      Macro Shannon diversity 131.17683 138.38326  3.099284 132.30877</span></span>
+<span><span class="co">#&gt; 3      Macro Simpson diversity  64.73642  65.85180  2.670176  60.61835</span></span>
+<span><span class="co">#&gt; 4      Micro  Species richness 203.00000 282.94680 21.367817 241.06665</span></span>
+<span><span class="co">#&gt; 5      Micro Shannon diversity  57.86578  65.89988  3.420808  59.19521</span></span>
+<span><span class="co">#&gt; 6      Micro Simpson diversity  14.77632  14.94635  1.263246  12.47044</span></span>
 <span><span class="co">#&gt;         UCL</span></span>
-<span><span class="co">#&gt; 1 400.44205</span></span>
-<span><span class="co">#&gt; 2 143.79048</span></span>
-<span><span class="co">#&gt; 3  70.89562</span></span>
-<span><span class="co">#&gt; 4 324.95570</span></span>
-<span><span class="co">#&gt; 5  72.73673</span></span>
-<span><span class="co">#&gt; 6  17.13954</span></span></code></pre></div>
+<span><span class="co">#&gt; 1 403.35712</span></span>
+<span><span class="co">#&gt; 2 144.45774</span></span>
+<span><span class="co">#&gt; 3  71.08525</span></span>
+<span><span class="co">#&gt; 4 324.82695</span></span>
+<span><span class="co">#&gt; 5  72.60454</span></span>
+<span><span class="co">#&gt; 6  17.42227</span></span></code></pre></div>
 <p>And plot it:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">iNEXT</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/iNEXT/man/ggiNEXT.html" class="external-link">ggiNEXT</a></span><span class="op">(</span><span class="va">rare_out_abun</span><span class="op">)</span></span></code></pre></div>
 <p><img src="plotting-warande_files/figure-html/plot%20abundance%20based%20curve-1.png" width="700"></p>
+</div>
 </div>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
@@ -294,13 +304,11 @@ shape (and exactly this shape) to this format.</p>
 
 
     <footer><div class="pkgdown-footer-left">
-  <p></p>
-<p>Developed by Pieter Huybrechts.</p>
+  <p>Developed by Pieter Huybrechts.</p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
 </div>
 
     </footer>
