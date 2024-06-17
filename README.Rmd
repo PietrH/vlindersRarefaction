@@ -86,7 +86,7 @@ iNEXT::ggiNEXT(rare_out_inc) + ggplot2::ggtitle("Incidence based")
 ```
 Now with an assemblage set:
 
-```{r example with assemblage, echo=TRUE}
+```{r example-with-assemblage, echo=TRUE}
 
 # Let's generate some random area's for the observations to belong to.
 warande_gebieden <- warande %>% 

@@ -111,10 +111,10 @@ rare_out_abun_micromacro <-
 iNEXT::ggiNEXT(rare_out_inc_gebied) + ggplot2::ggtitle("Incidence based, with areas")
 ```
 
-<img src="man/figures/README-example with assemblage-1.png" width="100%" />
+<img src="man/figures/README-example-with-assemblage-1.png" width="100%" />
 
 ``` r
 iNEXT::ggiNEXT(rare_out_abun_micromacro) + ggplot2::ggtitle("Abundance based, split on Micro/Macro")
 ```
 
-<img src="man/figures/README-example with assemblage-2.png" width="100%" />
+<img src="man/figures/README-example-with-assemblage-2.png" width="100%" />
