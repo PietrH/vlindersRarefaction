@@ -17,7 +17,7 @@ convert_to_abundance <- function(input_dataframe, assemblage ) {
 
   # group input dataframe ---------------------------------------------------
 
-  grouped_df <- input_dataframe %>% dplyr::group_by(MicroMacro)
+  grouped_df <- dplyr::group_by(input_dataframe, {{assemblage}})
 
 
   # calculate individual based abundance ------------------------------------
