@@ -11,6 +11,7 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 [![test-coverage](https://github.com/PietrH/vlindersRarefaction/actions/workflows/test-coverage.yaml/badge.svg)](https://github.com/PietrH/vlindersRarefaction/actions/workflows/test-coverage.yaml)
 [![Codecov test
 coverage](https://codecov.io/gh/PietrH/vlindersRarefaction/branch/main/graph/badge.svg)](https://app.codecov.io/gh/PietrH/vlindersRarefaction?branch=main)
+
 <!-- badges: end -->
 
 ## Installation
@@ -31,7 +32,16 @@ package](https://github.com/AnneChao/iNEXT) expects for abundance and
 incidence frequency data.
 
 The package was written with exactly this file in mind as a draft, with
-little flexibility. This means that if your file doesn’t look like this:
+little flexibility. This means that your file will need the following
+columns as a minimum:
+
+- date
+- species_name
+- year
+- number
+
+Any number of extra columns can be provided to split the rarefaction on,
+these are called *assemblages* in the context of iNEXT.
 
     #> Rows: 2,976
     #> Columns: 5
@@ -40,10 +50,6 @@ little flexibility. This means that if your file doesn’t look like this:
     #> $ year         <dbl> 2009, 2009, 2009, 2009, 2010, 2010, 2010, 2010, 2010, 201…
     #> $ number       <dbl> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, …
     #> $ MicroMacro   <chr> "Micro", "Macro", "Macro", "Macro", "Macro", "Macro", "Ma…
-
-This package will not work for you. Please create an issue if you would
-like to use it on data of a different shape (although at that point I’ll
-probably just rewrite it to accept DarwinCore occurrence inputs).
 
 This is a basic example on how you can plug this package into iNEXT:
 
@@ -63,12 +69,52 @@ rare_out_abun <-
                )
 ## and plot them:
 iNEXT::ggiNEXT(rare_out_abun) + ggplot2::ggtitle("Abundance based")
+#> Warning in ggiNEXT.iNEXT(rare_out_abun): invalid color.var setting, the iNEXT
+#> object do not consist multiple assemblages, change setting as Order.q
 ```
 
 <img src="man/figures/README-example-1.png" width="100%" />
 
 ``` r
 iNEXT::ggiNEXT(rare_out_inc) + ggplot2::ggtitle("Incidence based")
+#> Warning in ggiNEXT.iNEXT(rare_out_inc): invalid color.var setting, the iNEXT
+#> object do not consist multiple assemblages, change setting as Order.q
 ```
 
-<img src="man/figures/README-example-2.png" width="100%" />
+<img src="man/figures/README-example-2.png" width="100%" /> Now with an
+assemblage set:
+
+``` r
+
+# Let's generate some random area's for the observations to belong to.
+warande_gebieden <- warande %>% 
+  dplyr::mutate(gebied =
+                  sample(
+                    c("gebied_a", "gebied_b"),
+                    nrow(warande),
+                    replace = TRUE)
+  )
+
+rare_out_inc_gebied <-
+  iNEXT::iNEXT(convert_to_incidence_freq(warande_gebieden, gebied),
+               datatype = "incidence_freq",
+               nboot = 2 # for speed
+               )
+
+rare_out_abun_micromacro <- 
+    iNEXT::iNEXT(convert_to_abundance(warande, MicroMacro),
+               datatype = "abundance",
+               nboot = 2 # for speed
+               )
+
+## and plot them:
+iNEXT::ggiNEXT(rare_out_inc_gebied) + ggplot2::ggtitle("Incidence based, with areas")
+```
+
+<img src="man/figures/README-example with assemblage-1.png" width="100%" />
+
+``` r
+iNEXT::ggiNEXT(rare_out_abun_micromacro) + ggplot2::ggtitle("Abundance based, split on Micro/Macro")
+```
+
+<img src="man/figures/README-example with assemblage-2.png" width="100%" />
