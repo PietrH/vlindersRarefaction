@@ -24,6 +24,7 @@ Suggests:
     ggplot2,
     iNEXT,
     knitr,
+    lubridate,
     readr,
     rmarkdown,
     testthat (>= 3.0.0)

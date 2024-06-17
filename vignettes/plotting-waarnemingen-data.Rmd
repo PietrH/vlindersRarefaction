@@ -1,0 +1,78 @@
+---
+title: "Plotting data from a waarnemingen.be export"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{plotting-waarnemingen-data}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(vlindersRarefaction)
+```
+
+Reading some data from waarnemingen.be
+
+```{r read-data}
+data("waarnemingen_dirk")
+dplyr::glimpse(waarnemingen_dirk)
+```
+
+We only need a few of these columns, let's demonstrate by plotting rarefaction curves for the families in this dataset, for the two locations in the dataset.
+
+First get rid of any rows with missing data. Let's only keep columns we are going to use, and add a year column. Let's also remove any families with less than 100 individuals observed
+
+```{r cleanup}
+
+families_to_plot <- 
+  waarnemingen_dirk %>% 
+  dplyr::group_by(family) %>% 
+  dplyr::summarise(n_individuals_observed = sum(number)) %>% 
+  dplyr::filter(n_individuals_observed >= 100) %>% 
+  dplyr::pull(family)
+
+waarnemingen_cleaned <- 
+  waarnemingen_dirk %>% 
+  dplyr::select(date,
+         species_name,
+         family,
+         number,
+         location) %>% 
+  dplyr::mutate(
+    year = lubridate::year(date)
+  ) %>% 
+  dplyr::filter(!is.na(family),
+                !is.na(location),
+                family %in% families_to_plot)
+```
+
+Let's group by location, and then create some plots:
+
+
+
+```{r}
+waarnemingen_grouped_by_location <-
+  dplyr::group_by(waarnemingen_cleaned, location)
+
+area_names <- 
+    dplyr::group_keys(waarnemingen_grouped_by_location) %>% 
+    dplyr::pull(1)
+
+ waarnemingen_grouped_by_location %>% 
+  dplyr::group_map(
+      ~convert_to_abundance(.x, family)
+  ) %>% 
+  purrr::map(~iNEXT::iNEXT(.x,
+                           datatype = "abundance",
+                           nboot = 50,
+                           endpoint = 1000)) %>% 
+  purrr::map2(area_names,~iNEXT::ggiNEXT(.x) + ggplot2::ggtitle(.y))
+```
+
