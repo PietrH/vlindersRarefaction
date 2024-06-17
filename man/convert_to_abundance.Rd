@@ -19,5 +19,5 @@ of species in that treatment, and the sum of every child equal to the total
 number of observed individuals.
 }
 \examples{
-\dontrun{convert_to_abundance(warande)}
+\dontrun{convert_to_abundance(warande, MicroMacro)}
 }
