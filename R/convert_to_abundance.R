@@ -28,9 +28,12 @@ convert_to_abundance <- function(input_dataframe, assemblage ) {
   #   purrr::map(~dplyr::pull(.x, n)) %>%
   #   purrr::set_names(c("Macro", "Micro"))
 
+  output_object <-
+    grouped_df %>%
     dplyr::group_by(species_name, .add = TRUE) %>%
     dplyr::summarise(obs_ind = sum(number), .keep = TRUE) %>%
     dplyr::group_map(~dplyr::pull(.x, obs_ind)) %>%
-    purrr::set_names(c("Macro", "Micro"))
+    purrr::set_names(group_values(grouped_df))
+
   return(output_object)
 }
