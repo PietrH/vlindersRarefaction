@@ -10,8 +10,8 @@
 #' @return a list in the format as is expected by iNEXT when datatype is set to abundance
 #' @export
 #'
-#' @examples \dontrun{convert_to_abundance(warande)}
-convert_to_abundance <- function(input_dataframe, assemblage ) {
+#' @examples \dontrun{convert_to_abundance(warande, MicroMacro)}
+convert_to_abundance <- function(input_dataframe, assemblage) {
   # assert that the input has the expected shape
   check_input_file(input_dataframe)
 
