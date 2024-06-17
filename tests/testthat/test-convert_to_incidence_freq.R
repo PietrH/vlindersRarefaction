@@ -26,3 +26,10 @@ test_that("convert_to_incidence_freq() returns number of species + 1 as number o
     number_of_macro_species
   )
 })
+
+test_that("convert_to_incidence_freq() should return unnamed list when no assemblage is provided", {
+  expect_named(
+    convert_to_incidence_freq(warande),
+    NULL
+  )
+})

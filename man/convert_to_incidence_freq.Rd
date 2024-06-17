@@ -4,7 +4,7 @@
 \alias{convert_to_incidence_freq}
 \title{Convert a known input format to the incidence frequency format that iNEXT expects}
 \usage{
-convert_to_incidence_freq(input_dataframe, assemblage)
+convert_to_incidence_freq(input_dataframe, assemblage = NULL)
 }
 \arguments{
 \item{input_dataframe}{dataframe with exactly the same columns as \code{tblWarandepark.csv}}
@@ -13,7 +13,7 @@ convert_to_incidence_freq(input_dataframe, assemblage)
 Every value in this column will result in a seperate curve in the iNEXT output.}
 }
 \value{
-a list in the format as is expected by iNEXT when datatype is set to incidence_freq
+a list of vectors in the format as is expected by iNEXT when datatype is set to incidence_freq
 }
 \description{
 iNEXT expects incidence frequency data to be a list, with one child per
@@ -23,5 +23,7 @@ per species equal to the number of sampling units this species was observed
 in.
 }
 \examples{
-\dontrun{convert_to_incidence_freq(warande, MicroMacro)}
+\dontrun{
+convert_to_incidence_freq(warande, MicroMacro)
+}
 }

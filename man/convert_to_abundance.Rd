@@ -4,7 +4,7 @@
 \alias{convert_to_abundance}
 \title{Convert a known input format to the individual based abundance format that iNEXT expects}
 \usage{
-convert_to_abundance(input_dataframe)
+convert_to_abundance(input_dataframe, assemblage)
 }
 \arguments{
 \item{input_dataframe}{dataframe with exactly the same columns as \code{tblWarandepark.csv}}
