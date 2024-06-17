@@ -33,3 +33,20 @@ test_that("convert_to_incidence_freq() should return unnamed list when no assemb
     NULL
   )
 })
+
+test_that("convert_to_incidence_freq() returns named list of new column when provided as assemblage", {
+  warande_gebied <-
+    warande %>%
+    dplyr::mutate(gebied =
+                    sample(
+                      c("geb_a", "geb_b"),
+                      nrow(warande),
+                      replace = TRUE
+                      )
+                  )
+
+  expect_named(
+    convert_to_incidence_freq(warande_gebied, gebied),
+    c("geb_a","geb_b")
+  )
+})
