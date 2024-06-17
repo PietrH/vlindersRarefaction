@@ -11,12 +11,12 @@ test_that("convert_to_abundance() returns right amount of species", {
     dplyr::n_distinct()
 
   expect_identical(
-    length(convert_to_abundance(warande)$Macro),
+    length(convert_to_abundance(warande, MicroMacro)$Macro),
     number_of_macro_species
   )
 
   expect_identical(
-    length(convert_to_abundance(warande)$Micro),
+    length(convert_to_abundance(warande, MicroMacro)$Micro),
     number_of_micro_species
   )
 })
@@ -27,12 +27,12 @@ test_that("convert_to_abundance() returns right amount of individuals", {
    dplyr::summarise(total_obs_ind = sum(number))
 
  expect_identical(
-   sum(convert_to_abundance(warande)$Macro),
+   sum(convert_to_abundance(warande, MicroMacro)$Macro),
        dplyr::filter(observed_individuals,MicroMacro == "Macro")$total_obs_ind)
 
 
  expect_identical(
-   sum(convert_to_abundance(warande)$Micro),
+   sum(convert_to_abundance(warande, MicroMacro)$Micro),
        dplyr::filter(observed_individuals,MicroMacro == "Micro")$total_obs_ind)
 
 })
