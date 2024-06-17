@@ -26,8 +26,17 @@ convert_to_abundance <- function(input_dataframe, assemblage) {
     grouped_df %>%
     dplyr::group_by(species_name, .add = TRUE) %>%
     dplyr::summarise(obs_ind = sum(number), .keep = TRUE) %>%
-    dplyr::group_map(~dplyr::pull(.x, obs_ind)) %>%
-    purrr::set_names(group_values(grouped_df))
+    dplyr::group_map(~dplyr::pull(.x, obs_ind))
 
-  return(output_object)
+  # handle case where no assemblage was provided ----------------------------
+  if(missing(assemblage)){
+    return(output_object)
+  } else {
+
+  # add names to groups when assemblage is provided -------------------------
+    return(
+      purrr::set_names(output_object,
+                       group_values(grouped_df))
+    )
+  }
 }
