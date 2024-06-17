@@ -1,12 +1,12 @@
 ---
-title: "Creating some rarefaction curves for butteryfly data"
+title: "Basic plotting of rarefaction curves"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{plotting-warande}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
-
+# Creating some rarefaction curves for butteryfly data
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
@@ -33,17 +33,19 @@ iNEXT expects incidence data to consist of a list of frequencies, with the first
 This package provides a function to convert a dataframe with a known shape (and
 exactly this shape) to this format. 
 
+You can provide a column that will be used to split your dataframe into assemblages.
+
 ```{r demo convert_to_incidence_freq, include=FALSE}
 convert_to_incidence_freq(warande)
   
 ```
 
-
+Let's set our assemblage to MicroMacro, so have one assembly for the Micro butterflies, and one for the Macro butterflies.
 
 ```{r calculate rarefaction by incidence}
 rare_out_inc <- 
   iNEXT::iNEXT(
-    convert_to_incidence_freq(warande),
+    convert_to_incidence_freq(warande, assemblage = MicroMacro),
     datatype = "incidence_freq",
     nboot = 50 # you might want to set this a bit higher
     )
@@ -70,7 +72,7 @@ Plug this into iNEXT:
 
 ```{r calculate rarefaction by abundance}
 rare_out_abun <- 
-  iNEXT::iNEXT(convert_to_abundance(warande),
+  iNEXT::iNEXT(convert_to_abundance(warande, assemblage = MicroMacro),
              datatype = "abundance",
              nboot = 50 # you might want to set this a bit higher
              )

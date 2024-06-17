@@ -1,0 +1,54 @@
+---
+title: "Plot multiple rarefaction curves, split by micromacro for each area."
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{plot-by-area-and-micromacro}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(vlindersRarefaction)
+```
+
+```{r read input data}
+data(warande) # example data included in package
+dplyr::glimpse(warande)
+```
+
+Let's add some area's to also plot by:
+
+```{r generate areas}
+warande_gebieden <- warande %>% 
+  dplyr::mutate(gebied =
+                  sample(
+                    c("gebied_a", "gebied_b"),
+                    nrow(warande),
+                    replace = TRUE)
+  )
+```
+
+Next we'll group our dataframe by a column, and then iterate over this column to create rarefaction plots. I'm using some more obscure grouping functions from dplyr to programatically get the values of this grouping column, but you could provide these manually as well if you are confident in de order the groups will appear in. 
+
+
+```{r create seperate plots based on dplyr groups}
+  warande_grouped_by_area <- dplyr::group_by(warande_gebieden, gebied)
+  area_names <- 
+    dplyr::group_keys(warande_grouped_by_area) %>% 
+    dplyr::pull(1)
+
+  warande_grouped_by_area %>% 
+  dplyr::group_map(
+      ~convert_to_abundance(.x, MicroMacro)
+  ) %>% 
+  purrr::map(~iNEXT::iNEXT(.x, datatype = "abundance", nboot = 5)) %>% 
+  purrr::map2(area_names,~iNEXT::ggiNEXT(.x) + ggplot2::ggtitle(.y))
+```
+
