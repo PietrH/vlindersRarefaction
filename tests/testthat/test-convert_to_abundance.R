@@ -36,3 +36,27 @@ test_that("convert_to_abundance() returns right amount of individuals", {
        dplyr::filter(observed_individuals,MicroMacro == "Micro")$total_obs_ind)
 
 })
+
+test_that("convert_to_abundance() should return unnamed list when no assemblage is provided", {
+  expect_named(
+    convert_to_abundance(warande),
+    NULL
+  )
+  })
+
+test_that("convert_to_abundance() returns named list of new column when provided as assemblage", {
+  warande_gebied <-
+    warande %>%
+    dplyr::mutate(gebied =
+                    sample(
+                      c("geb_a", "geb_b"),
+                      nrow(warande),
+                      replace = TRUE
+                    )
+    )
+
+  expect_named(
+    convert_to_abundance(warande_gebied, gebied),
+    c("geb_a","geb_b")
+  )
+})
