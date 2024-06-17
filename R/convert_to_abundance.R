@@ -22,12 +22,6 @@ convert_to_abundance <- function(input_dataframe, assemblage) {
 
   # calculate individual based abundance ------------------------------------
 
-  # grouped_df %>%
-  #   dplyr::count(species_name) %>%
-  #   dplyr::group_split() %>%
-  #   purrr::map(~dplyr::pull(.x, n)) %>%
-  #   purrr::set_names(c("Macro", "Micro"))
-
   output_object <-
     grouped_df %>%
     dplyr::group_by(species_name, .add = TRUE) %>%
