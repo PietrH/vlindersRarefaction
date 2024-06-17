@@ -3,5 +3,4 @@
 export("%>%")
 export(convert_to_abundance)
 export(convert_to_incidence_freq)
-export(pull_assemblage)
 importFrom(magrittr,"%>%")
