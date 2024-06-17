@@ -25,9 +25,9 @@ convert_to_incidence_freq <- function(input_dataframe, assemblage = NULL) {
   # every element is a species en in howmany of the sampling units they were
   # found
 
-  # handle case where no assemblage was provided ----------------------------
 
-  if (is.null(assemblage)) {
+  # handle case where no assemblage was provided ----------------------------
+  if(missing(assemblage)){
     ## calculate number of sampling units --------------------------------------
     number_of_sampling_units <-
       dplyr::n_distinct(dplyr::pull(input_dataframe, date))
@@ -36,11 +36,9 @@ convert_to_incidence_freq <- function(input_dataframe, assemblage = NULL) {
       dplyr::count(input_dataframe, species_name) %>%
       dplyr::pull(n)
     ## combine into output obj -------------------------------------------------
-    list(c(number_of_sampling_units, incidence_frequencies)) %>%
-      return()
-  }
-  # handle case where assemblage is provided --------------------------------
+    return(list(c(number_of_sampling_units, incidence_frequencies)))
 
+  }
 
   ## group input dataframe ---------------------------------------------------
 
@@ -52,7 +50,6 @@ convert_to_incidence_freq <- function(input_dataframe, assemblage = NULL) {
     grouped_df %>%
     dplyr::group_map(~ dplyr::n_distinct(dplyr::pull(.x, date))) %>%
     purrr::set_names(group_values(grouped_df))
-
   ## calculate incidence frequencies -----------------------------------------
 
   incidence_frequencies <-
@@ -74,15 +71,8 @@ convert_to_incidence_freq <- function(input_dataframe, assemblage = NULL) {
     )) %>%
     purrr::set_names(group_values(grouped_df))
 
-    if (is.null(assemblage)) {
-      # if assemblage was not provided, we are still grouping but place everything
-      # in a single group with a dummy value, but we don't need to keep this dummy
-      # value in the output
-      return(unname(output_object))
-    } else {
-      (
-        return(output_object)
-      )
-    }
+
+
+  return(output_object)
 
 }
