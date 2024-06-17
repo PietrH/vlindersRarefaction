@@ -1,7 +1,7 @@
 Package: vlindersRarefaction
 Title: Use iNEXT to create Rarefaction curves for citizen science
     Butterfly data
-Version: 0.1.0
+Version: 0.2.0
 Authors@R: c(
     person("Pieter", "Huybrechts", , "pieter.huybrechts@inbo.be", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-6658-6062")),
